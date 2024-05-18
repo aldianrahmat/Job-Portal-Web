@@ -21,7 +21,7 @@
     "minPrice": "4",
     "maxPrice": "5",
     "salaryType": "Yearly",
-    "jobLocation": "Jakarta Pusat",
+    "jobLocation": "Jakarta Selatan",
     "postingDate": "2024-05-18",
     "experienceLevel": "Internship",
     "employmentType": "Temporary",
@@ -35,7 +35,7 @@
     "minPrice": "40",
     "maxPrice": "50",
     "salaryType": "Yearly",
-    "jobLocation": "Jakarta Pusat",
+    "jobLocation": "Jakarta Barat",
     "postingDate": "2024-05-18",
     "experienceLevel": "Any experience",
     "employmentType": "Full-time", 
@@ -49,7 +49,7 @@
     "minPrice": "40",
     "maxPrice": "50",
     "salaryType": "Monthly",
-    "jobLocation": "Jakarta Utara",
+    "jobLocation": "Jakarta Timur",
     "postingDate": "2024-05-18",
     "experienceLevel": "Work remotely",
     "employmentType": "Part-time",
@@ -63,25 +63,11 @@
     "minPrice": "50",
     "maxPrice": "75",
     "salaryType": "Yearly",
-    "jobLocation": "Jakarta Pusat",
+    "jobLocation": "Jakarta Utara",
     "postingDate": "2024-05-18",
     "experienceLevel": "Internship",
     "employmentType": "Full-time",
     "description": "Bertanggung jawab untuk mengembangkan dan menerapkan elemen visual pada sebuah aplikasi web atau mobile, memastikan tampilan dan interaksi yang menarik serta responsif bagi pengguna."
-  },
-  {
-    "id": 6,
-    "companyName": "Trainline group",
-    "jobTitle": "DevOps Engineer",
-    "companyLogo": "/images/Trainline.png",
-    "minPrice": "80",
-    "maxPrice": "120",
-    "salaryType": "Yearly",
-    "jobLocation": "Jakarta Utara",
-    "postingDate": "2024-05-18",
-    "experienceLevel": "Internship",
-    "employmentType": "Temporary",
-    "description": "Bertanggung jawab untuk menjembatani kesenjangan antara pengembangan perangkat lunak dan operasi TI, dengan tujuan meningkatkan kecepatan dan kualitas pengiriman perangkat lunak melalui otomatisasi dan pemantauan yang efisien."
   }
   
   
