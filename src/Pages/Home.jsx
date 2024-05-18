@@ -52,17 +52,17 @@ const Home = () => {
       />
 
       {/* Konten utama */}
-      <div className="bg-[#FAFAFA] flex">
+      <div className="bg-[#FAFAFA] grid grid-cols-12 gap-4 px-4 py-4">
         {/* Sisi kiri */}
-        <div className="bg-white p-4 rounded m-10">Kiri</div>
+        <div className="bg-white p-4 rounded col-span-2">Kiri</div>
 
         {/* Kartu pekerjaan */}
-        <div className="col-span-2 bg-white p-4 rounded-sm">
+        <div className="col-span-8 bg-white p-4 rounded-sm">
           <Jobs result={filteredJobs} /> {/* Kirim filteredJobs ke komponen Jobs */}
         </div>
 
         {/* Sisi kanan */}
-        <div className="bg-white p-4 rounded m-10">Kanan</div>
+        <div className="bg-white p-4 rounded col-span-2">Kanan</div>
       </div>
     </div>
   );

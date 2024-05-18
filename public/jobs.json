@@ -11,7 +11,7 @@
     "postingDate": "2024-05-18",
     "experienceLevel": "Any experience",
     "employmentType": "Full-time",
-    "description": "Mengoptimalkan kecepatan dan skalabilitas perangkat lunak. Tugasnya adalah memastikan aplikasi bekerja secara stabil dan efisien."
+    "description": "Mengoptimalkan kecepatan dan skalabilitas perangkat lunak melibatkan penerapan teknik-teknik pemrograman efisien dan penyesuaian infrastruktur untuk memastikan aplikasi tetap stabil dan responsif saat menangani beban kerja yang meningkat."
   },
   {
     "id": 2,
@@ -24,30 +24,30 @@
     "jobLocation": "Jakarta Selatan",
     "postingDate": "2024-05-18",
     "experienceLevel": "Internship",
-    "employmentType": "Temporary",
-    "description": "Merancang, membangun, serta memelihara website."
+    "employmentType": "Magang",
+    "description": "Merancang, membangun, dan memelihara website yang responsif dan menarik secara visual. Menjamin fungsionalitas yang optimal dan pengalaman pengguna yang memuaskan."
   },
   {
     "id": 3,
     "companyName": "Spline studio",
     "jobTitle": "Data Scientist",
     "companyLogo": "/images/Spline.png",
-    "minPrice": "40",
-    "maxPrice": "50",
+    "minPrice": "4",
+    "maxPrice": "5",
     "salaryType": "Yearly",
     "jobLocation": "Jakarta Barat",
     "postingDate": "2024-05-18",
     "experienceLevel": "Any experience",
     "employmentType": "Full-time", 
-    "description": "Bertanggung jawab dalam hal mengumpulkan, menganalisis, dan menafsirkan data untuk membantu pengambilan keputusan dalam suatu organisasi."
+    "description": "Melibatkan pengumpulan, analisis, dan interpretasi data untuk mendukung keputusan organisasi. Ini mencakup pengumpulan data dari berbagai sumber, analisis untuk mengidentifikasi tren, serta penggunaan hasilnya dalam pengambilan keputusan strategis."
   },
   {
     "id": 4,
     "companyName": "Raycast corp",
     "jobTitle": "UI/UX Designer",
     "companyLogo": "/images/Raycast.png",
-    "minPrice": "40",
-    "maxPrice": "50",
+    "minPrice": "4",
+    "maxPrice": "5",
     "salaryType": "Monthly",
     "jobLocation": "Jakarta Timur",
     "postingDate": "2024-05-18",
@@ -60,13 +60,13 @@
     "companyName": "Loom",
     "jobTitle": "Frontend Developer",
     "companyLogo": "/images/Loom.png",
-    "minPrice": "50",
-    "maxPrice": "75",
+    "minPrice": "5",
+    "maxPrice": "7",
     "salaryType": "Yearly",
     "jobLocation": "Jakarta Utara",
     "postingDate": "2024-05-18",
     "experienceLevel": "Internship",
-    "employmentType": "Full-time",
+    "employmentType": "Magang",
     "description": "Bertanggung jawab untuk mengembangkan dan menerapkan elemen visual pada sebuah aplikasi web atau mobile, memastikan tampilan dan interaksi yang menarik serta responsif bagi pengguna."
   }
   
