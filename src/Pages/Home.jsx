@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import Banner from '../components/Banner';
-import Jobs from './Jobs'; // Assuming Jobs component is updated to receive 'result' prop
+import Jobs from './Jobs';
 
 const Home = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
   const [jobs, setJobs] = useState([]);
-  const [filteredJobs, setFilteredJobs] = useState([]); // State for filtered jobs
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [query, setQuery] = useState('');
+  const [location, setLocation] = useState('');
 
-  // Fetch job data on component mount
+  // Mengambil data pekerjaan saat komponen dipasang
   useEffect(() => {
     fetch('jobs.json')
       .then((res) => res.json())
@@ -17,75 +18,51 @@ const Home = () => {
       })
       .catch((error) => {
         console.error('Error fetching jobs:', error);
-        // Handle error gracefully, e.g., display an error message to the user
+        // Tangani kesalahan dengan baik, misalnya tampilkan pesan error kepada pengguna
       });
   }, []);
 
-  // Handle input change
-  const [query, setQuery] = useState('');
+  // Menangani perubahan input judul pekerjaan
   const handleInputChange = (event) => {
-    setQuery(event.target.value.toLowerCase()); // Ensure case-insensitive search
+    setQuery(event.target.value.toLowerCase()); // Pastikan pencarian tidak case-sensitive
   };
 
-  // Combined filtering logic (improved readability and maintainability)
-  const filterJobs = (jobsToFilter, selectedCategory, query) => {
-    let filteredJobs = jobsToFilter;
-
-    // Filter by query (case-insensitive)
-    if (query) {
-      filteredJobs = filteredJobs.filter((job) =>
-        job.jobTitle.toLowerCase().includes(query)
-      );
-    }
-
-    // Filter by category (if selected)
-    if (selectedCategory) {
-      filteredJobs = filteredJobs.filter((job) => {
-        // Use appropriate comparison based on data types
-        if (typeof selectedCategory === 'string') {
-          // String-based categories (e.g., jobLocation, salaryType)
-          return job[selectedCategory].toLowerCase() === selectedCategory.toLowerCase();
-        } else if (typeof selectedCategory === 'number') {
-          // Numeric-based categories (e.g., maxPrice)
-          return parseInt(job.maxPrice) <= selectedCategory;
-        } else {
-          // Handle other data types as needed
-          console.warn('Unsupported category filter data type:', typeof selectedCategory);
-          return true; // Avoid accidental filtering out jobs
-        }
-      });
-    }
-
-    return filteredJobs;
+  // Menangani perubahan lokasi
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value.toLowerCase()); // Pastikan pencarian tidak case-sensitive
   };
 
-  // Update filtered jobs whenever dependencies change
+  // Memperbarui pekerjaan yang difilter setiap kali ada perubahan dependensi
   useEffect(() => {
-    const updatedFilteredJobs = filterJobs(jobs, selectedCategory, query);
-    setFilteredJobs(updatedFilteredJobs);
-  }, [jobs, selectedCategory, query]);
-
-  // Radio or button-based filtering (flexible selection method)
-  const handleFilterChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
+    const filtered = jobs.filter((job) => {
+      const matchesTitle = job.jobTitle.toLowerCase().includes(query);
+      const matchesLocation = job.jobLocation.toLowerCase().includes(location);
+      return matchesTitle && matchesLocation;
+    });
+    setFilteredJobs(filtered);
+  }, [jobs, query, location]);
 
   return (
     <div>
-      <Banner query={query} handleInputChange={handleInputChange} />
+      <Banner 
+        query={query} 
+        handleInputChange={handleInputChange} 
+        location={location} 
+        handleLocationChange={handleLocationChange} 
+      />
 
-      {/* Main content */}
+      {/* Konten utama */}
       <div className="bg-[#FAFAFA] flex">
-        {/* Left side */}
-        <div className="bg-white p-4 rounded m-10">Left</div>
+        {/* Sisi kiri */}
+        <div className="bg-white p-4 rounded m-10">Kiri</div>
 
-        {/* Jobs cards */}
+        {/* Kartu pekerjaan */}
         <div className="col-span-2 bg-white p-4 rounded-sm">
-          <Jobs result={filteredJobs} /> {/* Pass filteredJobs to Jobs component */}
+          <Jobs result={filteredJobs} /> {/* Kirim filteredJobs ke komponen Jobs */}
         </div>
 
-        {/* Right side */}
-        <div className="bg-white p-4 rounded m-10">Right</div>
+        {/* Sisi kanan */}
+        <div className="bg-white p-4 rounded m-10">Kanan</div>
       </div>
     </div>
   );

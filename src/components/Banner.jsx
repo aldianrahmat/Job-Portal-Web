@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FiSearch, FiMap } from "react-icons/fi";
 
-const Banner = ({ query, handleInputChange }) => {
-
+const Banner = ({ query, handleInputChange, location, handleLocationChange }) => {
     return (
         <div className='max-w-screen-2x1 container mx-auto xl:px-24 px-24 md:py-20 py-14 '>
             <h1 className='text-5xl font-bold text-primary mb-3'>
@@ -37,8 +36,8 @@ const Banner = ({ query, handleInputChange }) => {
                             placeholder='Lokasi'
                             className='block flex-1 border-0 bg-transparent py-1.5 pl-8 text-gray-900
                             placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6' 
-                            onChange={() => {}}  // Anda dapat menambahkan handler untuk lokasi jika diperlukan
-                            value={""} 
+                            onChange={handleLocationChange}  // Tambahkan handler untuk lokasi
+                            value={location} 
                         />
                         <FiMap className='absolute mt-2.5 ml-2 text-gray-400' />
                     </div>
