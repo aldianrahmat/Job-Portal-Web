@@ -7,11 +7,11 @@
       "minPrice": "9",
       "maxPrice": "10",
       "salaryType": "Yearly",
-      "jobLocation": "Brussels",
-      "postingDate": "2023-11-03",
+      "jobLocation": "Jakarta Pusat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Any experience",
       "employmentType": "Full-time",
-      "description": "Software Enginer adalah "
+      "description": "Mengoptimalkan kecepatan dan skalabilitas perangkat lunak. Tugasnya adalah memastikan aplikasi bekerja secara stabil dan efisien. "
     },
     {
       "id": 2,
@@ -21,11 +21,11 @@
       "minPrice": "4",
       "maxPrice": "5",
       "salaryType": "Yearly",
-      "jobLocation": "San Francisco",
-      "postingDate": "2023-11-02",
+      "jobLocation": "Jakarta Pusat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Internship",
       "employmentType": "Temporary",
-      "description": "Web Developer adalah"
+      "description": "Merancang, membangun, serta memelihara website."
     },
     {
       "id": 3,
@@ -35,11 +35,11 @@
       "minPrice": "40",
       "maxPrice": "50",
       "salaryType": "Yearly",
-      "jobLocation": "Seattle",
-      "postingDate": "2023-10-28",
+      "jobLocation": "Jakarta Pusat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Any experience",
       "employmentType": "Full-time", 
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab dalam hal mengumpulkan, menganalisis, dan menafsirkan data untuk membantu pengambilan keputusan dalam suatu organisasi."
     },
     {
       "id": 4,
@@ -49,11 +49,11 @@
       "minPrice": "40",
       "maxPrice": "50",
       "salaryType": "Monthly",
-      "jobLocation": "London",
-      "postingDate": "2023-10-05",
+      "jobLocation": "Jakarta Utara",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Work remotely",
       "employmentType": "Part-time",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab untuk menciptakan antarmuka pengguna (User Interface, UI) yang efektif dan pengalaman pengguna (User Experience, UX) yang memuaskan dalam suatu produk digital, seperti aplikasi atau situs web"
     },
     {
       "id": 5,
@@ -63,11 +63,11 @@
       "minPrice": "50",
       "maxPrice": "75",
       "salaryType": "Yearly",
-      "jobLocation": "London",
-      "postingDate": "2023-10-28",
+      "jobLocation": "Jakarta Pusat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Intership",
       "employmentType": "Full-time",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab untuk mengembangkan dan menerapkan elemen visual pada sebuah aplikasi web atau mobile, memastikan tampilan dan interaksi yang menarik serta responsif bagi pengguna."
     },
     {
       "id": 6,
@@ -77,11 +77,11 @@
       "minPrice": "80",
       "maxPrice": "120",
       "salaryType": "Yearly",
-      "jobLocation": "Boston",
-      "postingDate": "2023-10-05",
+      "jobLocation": "Jakarta Utara",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Intership",
       "employmentType": "Temporary",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab untuk menjembatani kesenjangan antara pengembangan perangkat lunak dan operasi TI, dengan tujuan meningkatkan kecepatan dan kualitas pengiriman perangkat lunak melalui otomatisasi dan pemantauan yang efisien."
     },
     {
       "id": 1,
@@ -91,11 +91,11 @@
       "minPrice": "30",
       "maxPrice": "80",
       "salaryType": "Yearly",
-      "jobLocation": "Brussels",
-      "postingDate": "2023-11-05",
+      "jobLocation": "Jakarta Barat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Any experience",
       "employmentType": "Full-time",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Mengoptimalkan kecepatan dan skalabilitas perangkat lunak. Tugasnya adalah memastikan aplikasi bekerja secara stabil dan efisien."
     },
     {
       "id": 2,
@@ -105,11 +105,11 @@
       "minPrice": "40",
       "maxPrice": "50",
       "salaryType": "Yearly",
-      "jobLocation": "San Francisco",
-      "postingDate": "2023-10-28",
+      "jobLocation": "Jakarta Selatan",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Internship",
       "employmentType": "Temporary",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Merancang, membangun, serta memelihara website."
     },
     {
       "id": 3,
@@ -119,11 +119,11 @@
       "minPrice": "40",
       "maxPrice": "50",
       "salaryType": "Yearly",
-      "jobLocation": "Seattle",
-      "postingDate": "2023-10-28",
+      "jobLocation": "Jakarta Pusat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Any experience",
       "employmentType": "Full-time", 
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab dalam hal mengumpulkan, menganalisis, dan menafsirkan data untuk membantu pengambilan keputusan dalam suatu organisasi."
     },
     {
       "id": 4,
@@ -133,11 +133,11 @@
       "minPrice": "40",
       "maxPrice": "50",
       "salaryType": "Monthly",
-      "jobLocation": "London",
-      "postingDate": "2023-10-05",
+      "jobLocation": "Jakarta Utara",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Work remotely",
       "employmentType": "Part-time",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab untuk menciptakan antarmuka pengguna (User Interface, UI) yang efektif dan pengalaman pengguna (User Experience, UX) yang memuaskan dalam suatu produk digital, seperti aplikasi atau situs web"
     },
     {
       "id": 5,
@@ -147,11 +147,11 @@
       "minPrice": "50",
       "maxPrice": "75",
       "salaryType": "Yearly",
-      "jobLocation": "London",
-      "postingDate": "2023-10-28",
+      "jobLocation": "Jakarta Barat",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Intership",
       "employmentType": "Full-time",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab untuk mengembangkan dan menerapkan elemen visual pada sebuah aplikasi web atau mobile, memastikan tampilan dan interaksi yang menarik serta responsif bagi pengguna."
     },
     {
       "id": 6,
@@ -161,11 +161,11 @@
       "minPrice": "80",
       "maxPrice": "120",
       "salaryType": "Yearly",
-      "jobLocation": "Boston",
-      "postingDate": "2022-10-05",
+      "jobLocation": "Jakarta Selatan",
+      "postingDate": "2024-05-18",
       "experienceLevel": "Intership",
       "employmentType": "Temporary",
-      "description": "Mollit in laborum tempor Lorem incididunt irure. Aute eu ex ad sunt. Pariatur sint culpa do incididunt eiusmod eiusmod culpa. laborum tempor Lorem incididunt."
+      "description": "Bertanggung jawab untuk menjembatani kesenjangan antara pengembangan perangkat lunak dan operasi TI, dengan tujuan meningkatkan kecepatan dan kualitas pengiriman perangkat lunak melalui otomatisasi dan pemantauan yang efisien."
     }
   ]
   
