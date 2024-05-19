@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Jobs from "./Jobs";
 import FilterItem from "../components/FilterItem";
+import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -66,7 +67,9 @@ const Home = () => {
         </div>
 
         {/* Sisi kanan */}
-        <div className="bg-white p-4 rounded col-span-2">Kanan</div>
+        <div className="bg-white p-4 rounded col-span-2">
+          <Newsletter />
+        </div>
       </div>
     </div>
   );
