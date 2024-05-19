@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const CheckItem = ({ title }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const clickCheck = () => {
     setIsChecked(!isChecked);
@@ -9,7 +10,11 @@ const CheckItem = ({ title }) => {
 
   return (
     <div className="flex gap-2 my-2">
-      <button onClick={clickCheck}>
+      <button
+        onClick={clickCheck}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {isChecked ? (
           <svg
             width="20"
@@ -40,6 +45,31 @@ const CheckItem = ({ title }) => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+            />
+          </svg>
+        ) : isHovered ? (
+          <svg
+            width="20"
+            height="21"
+            viewBox="0 0 20 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="0.5"
+              y="0.86499"
+              width="19"
+              height="19"
+              rx="5.5"
+              fill="#E9E4EF"
+            />
+            <rect
+              x="0.5"
+              y="0.86499"
+              width="19"
+              height="19"
+              rx="5.5"
+              stroke="#2F88FF"
             />
           </svg>
         ) : (
