@@ -12,10 +12,12 @@ const FilterItem = () => {
         <CheckItem title="Jakarta Timur" />
       </div>
       <div>
-        <h2 className="font-semibold">Sistem Kerja</h2>
-        <CheckItem title="WFO" />
-        <CheckItem title="Hybrid" />
-        <CheckItem title="WFH" />
+        <h2 className="font-semibold">Gaji</h2>
+        <CheckItem title="Semua" />
+        <CheckItem title="< Rp4.000.000,00" />
+        <CheckItem title="< Rp8.000.000,00" />
+        <CheckItem title="< Rp10.000.000,00" />
+        <CheckItem title="< Rp15.000.000,00" />
       </div>
       <div>
         <h2 className="font-semibold">Tipe Pekerjaan</h2>
