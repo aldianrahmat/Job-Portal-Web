@@ -140,6 +140,12 @@ body{
     border-color: #f7f7f7;
   }
   
+  .titik {
+    width: 3px;
+    height: 3px; 
+    background-color: black; 
+    border-radius: 50%;
+  }
   
   
   /* create a job page */
