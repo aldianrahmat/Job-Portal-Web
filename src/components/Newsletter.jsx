@@ -7,11 +7,10 @@ const Newsletter = () => {
       <div>
         <h3 className="text-lg font-blod mb-2 flex items-center gap-2">
           <FaEnvelopeOpenText />
-          Kirim Email untuk Pekerjaan
+          Kirim saya email untuk pekerjaan
         </h3>
         <p className="text-primary/75 text-basemb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Dapatkan informasi terbaru dari perusahaan favorit kamu.
         </p>
 
         <div className="w-full space-y-4">
@@ -37,8 +36,8 @@ const Newsletter = () => {
           Dapat pemberitahuan Cepat
         </h3>
         <p className="text-primary/75 text-basemb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Upload CV terbaik kamu dan biarkan perusahaan menghubungi kamu
+          
         </p>
 
         <div className="w-full space-y-4">
