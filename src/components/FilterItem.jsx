@@ -13,11 +13,11 @@ const FilterItem = () => {
       </div>
       <div>
         <h2 className="font-semibold">Gaji</h2>
-        <CheckItem title="Semua" />
-        <CheckItem title="< Rp4.000.000,00" />
-        <CheckItem title="< Rp8.000.000,00" />
-        <CheckItem title="< Rp10.000.000,00" />
-        <CheckItem title="< Rp15.000.000,00" />
+        <CheckItem title="Di bawah Rp 4jt/Bln" />
+        <CheckItem title="Rp 4jt - Rp 8jt/Bln" />
+        <CheckItem title="Rp 8jt - Rp 10jt/Bln" />
+        <CheckItem title="Rp 10jt - Rp 15jt/Bln" />
+        <CheckItem title="Di atas Rp 15jt/Bln" />
       </div>
       <div>
         <h2 className="font-semibold">Tipe Pekerjaan</h2>
