@@ -80,8 +80,7 @@ const Navbar = () => {
           <span>Talenta Nusantara.</span>
         </a>
 
-        {/* Nav items for large devices */}
-        <ul className="hidden md:flex gap-12">
+        <ul className="flex gap-12">
           {navItems.map(({ path, title }) => (
             <li key={path} className="text-base text-primary">
               <NavLink
@@ -96,8 +95,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Sign and login buttons */}
-        <div className="text-base text-primary font-medium space-x-5 hidden lg:block">
+        <div className="flex gap-5 text-base text-primary font-medium">
           <Link to="/login" className="py-2 px-5 border rounded">
             Masuk
           </Link>
@@ -109,8 +107,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile menu */}
-        <div className="md:hidden block ">
+        <div className="md:hidden block">
           <button onClick={handleMenuToggler}>
             {isMenuOpen ? (
               <FaXmark className="w-5 h-5 text-primary" />
@@ -121,11 +118,10 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Nav items for mobile */}
-      <div className={`px-4 bg-black py-5 rounded-sm ${isMenuOpen ? "" : "hidden"}`}>
-        <ul>
+      <div className={`px-4 py-5 bg-black rounded-sm ${isMenuOpen ? "" : "hidden"}`}>
+        <ul className="flex flex-col gap-4">
           {navItems.map(({ path, title }) => (
-            <li key={path} className="text-base text-white first:text-white py-1">
+            <li key={path} className="text-base text-white">
               <NavLink
                 to={path}
                 className={({ isActive }) => (isActive ? "active" : "")}
@@ -135,10 +131,11 @@ const Navbar = () => {
             </li>
           ))}
 
-          <li className="text-white py-1">
-            <Link to="/login" className="">
-              Masuk
-            </Link>
+          <li className="text-white">
+            <Link to="/login">Masuk</Link>
+          </li>
+          <li className="text-white">
+            <Link to="/sign-up">Daftar</Link>
           </li>
         </ul>
       </div>
@@ -147,4 +144,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
