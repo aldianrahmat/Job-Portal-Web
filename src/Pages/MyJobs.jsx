@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiSearch, FiMap } from "react-icons/fi";
 
 const MyJobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -72,9 +73,12 @@ const MyJobs = () => {
                     <input
                         onChange={(e) => setSearchText(e.target.value)}
                         type="text"
-                        name="search"
-                        id="search"
+                        name="title"
+                        id="job-title"
+                        placeholder='Cari'
                         className="py-2 pl-3 border focus:outline-none lg:w-6/12 mb-4 w-full"/>
+                        <FiSearch className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" />
+
                     <button
                         className="bg-blue text-white font-semibold px-8 py-2 rounded-sm mb-4"
                         onClick={handleSearch}>Cari</button>
