@@ -111,14 +111,15 @@ const CreateJob = () => {
               />
             </div>
             <div className="lg:w-1/2 w-full">
-              <label className="block mb-2 text-lg">Tingkat Pengalaman</label>
+              <label className="block mb-2 text-lg">Sistem Kerja</label>
               <select
                 {...register("experienceLevel")}
                 className="create-job-input"
               >
-                <option value="">Pilih Tingkat Pengalaman Kerja</option>
-                <option value="Internship">Internship</option>
-                <option value="Work Remotely">Work Remotely</option>
+                <option value="">Pilih Sistem Kerja</option>
+                <option value="Work Remotely">WFO</option>
+                <option value="Work Remotely">Hybrid</option>
+                <option value="Work Remotely">WFH</option>
               </select>
             </div>
           </div>
@@ -157,7 +158,7 @@ const CreateJob = () => {
                 <option value="">Pilih Tipe Pekerjaan</option>
                 <option value="Full-time">Full-time</option>
                 <option value="Part-time">Part-time</option>
-                <option value="Temporary">Temporary</option>
+                <option value="Temporary">Magang</option>
               </select>
             </div>
           </div>
