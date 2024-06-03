@@ -10,7 +10,7 @@
     "jobLocation": "Jakarta Selatan",
     "postingDate": "2024-05-18",
     "experienceLevel": "Any experience",
-    "employmentType": "WHO",
+    "employmentType": "WFO",
     "description": "Mengoptimalkan kecepatan dan skalabilitas perangkat lunak melibatkan penerapan teknik-teknik pemrograman efisien dan penyesuaian infrastruktur untuk memastikan aplikasi tetap stabil dan responsif saat menangani beban kerja yang meningkat."
   },
   {
@@ -24,7 +24,7 @@
     "jobLocation": "Jakarta Selatan",
     "postingDate": "2024-05-18",
     "experienceLevel": "Internship",
-    "employmentType": "Magang",
+    "employmentType": "WFO",
     "description": "Merancang, membangun, dan memelihara website yang responsif dan menarik secara visual. Menjamin fungsionalitas yang optimal dan pengalaman pengguna yang memuaskan."
   },
   {
@@ -38,7 +38,7 @@
     "jobLocation": "Jakarta Selatan",
     "postingDate": "2024-05-18",
     "experienceLevel": "Any experience",
-    "employmentType": "Full-time", 
+    "employmentType": "Hybrid", 
     "description": "Melibatkan pengumpulan, analisis, dan interpretasi data untuk mendukung keputusan organisasi. Ini mencakup pengumpulan data dari berbagai sumber, analisis untuk mengidentifikasi tren, serta penggunaan hasilnya dalam pengambilan keputusan strategis."
   },
   {
@@ -52,7 +52,7 @@
     "jobLocation": "Jakarta Timur",
     "postingDate": "2024-05-18",
     "experienceLevel": "Work remotely",
-    "employmentType": "Part-time",
+    "employmentType": "WFH",
     "description": "Bertanggung jawab untuk menciptakan antarmuka pengguna (User Interface, UI) yang efektif dan pengalaman pengguna (User Experience, UX) yang memuaskan dalam suatu produk digital, seperti aplikasi atau situs web."
   },
   {
@@ -66,7 +66,7 @@
     "jobLocation": "Jakarta Utara",
     "postingDate": "2024-05-18",
     "experienceLevel": "Internship",
-    "employmentType": "Magang",
+    "employmentType": "WFH",
     "description": "Bertanggung jawab untuk mengembangkan dan menerapkan elemen visual pada sebuah aplikasi web atau mobile, memastikan tampilan dan interaksi yang menarik serta responsif bagi pengguna."
   }
   

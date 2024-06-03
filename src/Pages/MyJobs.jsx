@@ -11,6 +11,9 @@ const MyJobs = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 4;
 
+    // State to manage dropdown visibility
+    const [dropdownVisible, setDropdownVisible] = useState(null);
+
     useEffect(() => {
         setIsLoading(true);
         fetch('http://localhost:5173/myJobs/HexaVibes@gmail.com')
@@ -63,6 +66,11 @@ const MyJobs = () => {
                 setJobs(jobs.filter(job => job.id !== id));
             }
         });
+    };
+
+    // Function to toggle dropdown visibility
+    const toggleDropdown = (id) => {
+        setDropdownVisible(dropdownVisible === id ? null : id);
     };
 
     return (
@@ -160,20 +168,35 @@ const MyJobs = () => {
                                                     {job.jobType}
                                                 </td>
                                                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                    <div className="relative inline-block text-left">
-                                                        <button className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
-                                                            <span className="mr-1">Aksi</span>
-                                                            <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 7a1 1 0 011-1h1V5c0-1.1.9-2 2-2h6a2 2 0 012 2v1h1a1 1 0 011 1v2a1 1 0 01-1 1v7a2 2 0 01-2 2H6a2 2 0 01-2-2V10a1 1 0 01-1-1V7zm2-1v10a1 1 0 001 1h8a1 1 0 001-1V7H5zm5-4a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" /></svg>
+                                                    <div className="relative">
+                                                        <button
+                                                            className="bg-gray-500 text-white font-semibold px-4 py-2 rounded-sm focus:outline-none"
+                                                            onClick={() => toggleDropdown(job.id)}
+                                                        >
+                                                            Select
                                                         </button>
-                                                        <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                                                            <div className="py-1">
+                                                        {dropdownVisible === job.id && (
+                                                            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-sm shadow-lg">
                                                                 <button
                                                                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                                                    onClick={() => deleteJob(job.id)}>
+                                                                    onClick={() => {
+                                                                        window.location.href = `/edit-job/${job.id}`;
+                                                                        setDropdownVisible(null);
+                                                                    }}
+                                                                >
+                                                                    Ubah
+                                                                </button>
+                                                                <button
+                                                                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                                    onClick={() => {
+                                                                        deleteJob(job.id);
+                                                                        setDropdownVisible(null);
+                                                                    }}
+                                                                >
                                                                     Hapus
                                                                 </button>
                                                             </div>
-                                                        </div>
+                                                        )}
                                                     </div>
                                                 </td>
                                             </tr>
@@ -184,18 +207,19 @@ const MyJobs = () => {
                         </div>
                     </div>
 
-                    {/* Pagination */}
-                    <div className="mt-4 flex justify-center">
+                    <div className="flex justify-between mt-4">
                         <button
-                            className="px-4 py-2 mx-1 bg-gray-200 text-gray-700 rounded-md"
                             onClick={prevPage}
-                            disabled={currentPage === 1}>
+                            className={`bg-blue-500 text-white font-semibold px-4 py-2 rounded-sm ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            disabled={currentPage === 1}
+                        >
                             Previous
                         </button>
                         <button
-                            className="px-4 py-2 mx-1 bg-gray-200 text-gray-700 rounded-md"
                             onClick={nextPage}
-                            disabled={indexOfLastItem >= jobs.length}>
+                            className={`bg-blue-500 text-white font-semibold px-4 py-2 rounded-sm ${indexOfLastItem >= jobs.length ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            disabled={indexOfLastItem >= jobs.length}
+                        >
                             Next
                         </button>
                     </div>
