@@ -12,7 +12,7 @@ const Banner = ({ query, handleInputChange, location, handleLocationChange }) =>
             </p>
 
             <form>
-                <div className='flex justify-start md:flex-row flex-col md:gap-0 gap-4'>
+                <div className='flex justify-start md:flex-row flex-col md:gap-10 gap-4'>
                     <div className='flex md:rounded-md rounded shadow-sm ring-1 ring-inset  
                     focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 md:w-1/2 w-full'>
                         <input 
