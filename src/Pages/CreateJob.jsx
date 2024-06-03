@@ -12,7 +12,21 @@ const CreateJob = () => {
 
   const onSubmit = (data) => {
     data.skills = selectedOption;
-    console.log(data);
+    fetch("http://localhost:5000/post-job", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        // console.log(result);
+        if (result.acknowledged === true) {
+          alert("Job Posted Successfully!!");
+        }
+        reset(); // Reset the form
+      });
+
+    // console.log(data)
   };
 
   const option = [
@@ -37,7 +51,7 @@ const CreateJob = () => {
               <label className="block mb-2 text-lg">Judul Pekerjaan</label>
               <input
                 type="text"
-                placeholder="Ex: Web Developper" 
+                placeholder="Ex: Web Developper"
                 {...register("jobTittle")}
                 className="create-job-input"
               />
