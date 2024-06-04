@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "companyName": "Microsoft",
+    "jobTitle": "Software Engineer",
+    "companyLogo": "/images/Microsoft.png",
+    "minPrice": "9",
+    "maxPrice": "10",
+    "salaryType": "Yearly",
+    "jobLocation": "Jakarta Selatan",
+    "postingDate": "2024-05-18",
+    "experienceLevel": "Any experience",
+    "employmentType": "WFO",
+    "description": "Mengoptimalkan kecepatan dan skalabilitas perangkat lunak melibatkan penerapan teknik-teknik pemrograman efisien dan penyesuaian infrastruktur untuk memastikan aplikasi tetap stabil dan responsif saat menangani beban kerja yang meningkat."
+  },
+  {
+    "id": 2,
+    "companyName": "Notion",
+    "jobTitle": "Web Developer",
+    "companyLogo": "/images/Notion.png",
+    "minPrice": "4",
+    "maxPrice": "5",
+    "salaryType": "Yearly",
+    "jobLocation": "Jakarta Selatan",
+    "postingDate": "2024-05-18",
+    "experienceLevel": "Internship",
+    "employmentType": "WFO",
+    "description": "Merancang, membangun, dan memelihara website yang responsif dan menarik secara visual. Menjamin fungsionalitas yang optimal dan pengalaman pengguna yang memuaskan."
+  },
+  {
+    "id": 3,
+    "companyName": "LinkedIn",
+    "jobTitle": "Data Scientist",
+    "companyLogo": "/images/LinkedIn.png",
+    "minPrice": "4",
+    "maxPrice": "5",
+    "salaryType": "Yearly",
+    "jobLocation": "Jakarta Selatan",
+    "postingDate": "2024-05-18",
+    "experienceLevel": "Any experience",
+    "employmentType": "Hybrid", 
+    "description": "Melibatkan pengumpulan, analisis, dan interpretasi data untuk mendukung keputusan organisasi. Ini mencakup pengumpulan data dari berbagai sumber, analisis untuk mengidentifikasi tren, serta penggunaan hasilnya dalam pengambilan keputusan strategis."
+  },
+  {
+    "id": 4,
+    "companyName": "Raycast corp",
+    "jobTitle": "UI/UX Designer",
+    "companyLogo": "/images/Raycast.png",
+    "minPrice": "4",
+    "maxPrice": "5",
+    "salaryType": "Monthly",
+    "jobLocation": "Jakarta Timur",
+    "postingDate": "2024-05-18",
+    "experienceLevel": "Work remotely",
+    "employmentType": "WFH",
+    "description": "Bertanggung jawab untuk menciptakan antarmuka pengguna (User Interface, UI) yang efektif dan pengalaman pengguna (User Experience, UX) yang memuaskan dalam suatu produk digital, seperti aplikasi atau situs web."
+  },
+  {
+    "id": 5,
+    "companyName": "Loom",
+    "jobTitle": "Frontend Developer",
+    "companyLogo": "/images/Loom.png",
+    "minPrice": "5",
+    "maxPrice": "7",
+    "salaryType": "Yearly",
+    "jobLocation": "Jakarta Utara",
+    "postingDate": "2024-05-18",
+    "experienceLevel": "Internship",
+    "employmentType": "WFH",
+    "description": "Bertanggung jawab untuk mengembangkan dan menerapkan elemen visual pada sebuah aplikasi web atau mobile, memastikan tampilan dan interaksi yang menarik serta responsif bagi pengguna."
+  }
+  
+  
+]
