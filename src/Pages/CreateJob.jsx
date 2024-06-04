@@ -12,7 +12,7 @@ const CreateJob = () => {
 
   const onSubmit = (data) => {
     data.skills = selectedOption;
-    fetch("http://localhost:5000/post-job", {
+    fetch("http://localhost:5000/jobs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -52,7 +52,7 @@ const CreateJob = () => {
               <input
                 type="text"
                 placeholder="Ex: Web Developper"
-                {...register("jobTittle")}
+                {...register("jobTitle")}
                 className="create-job-input"
               />
             </div>
