@@ -1,8 +1,25 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import CreatableSelect from "react-select/creatable";
+import React, { useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 
-const CreateJob = () => {
+const UpdateJob = () => {
+  const { id } = useParams();
+  //console.log(id)
+  const {
+    _id,
+    jobTitle,
+    companyName,
+    minPrice,
+    maxPrice,
+    salaryType,
+    jobLocation,
+    postingDate,
+    experienceLevel,
+    companyLogo,
+    employmentType,
+    description,
+    postedBy,
+    skills,
+  } = useLoaderData();
   const [selectedOption, setSelectedOption] = useState(null);
   const {
     register,
@@ -12,8 +29,8 @@ const CreateJob = () => {
 
   const onSubmit = (data) => {
     data.skills = selectedOption;
-    fetch("http://localhost:5000/jobs", {
-      method: "POST",
+    fetch("http://localhost:3000/update.job/${id}", {
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
@@ -21,7 +38,7 @@ const CreateJob = () => {
       .then((result) => {
         // console.log(result);
         if (result.acknowledged === true) {
-          alert("Job Posted Successfully!!");
+          alert("Job Updated Successfully!!");
         }
         reset(); // Reset the form
       });
@@ -40,6 +57,7 @@ const CreateJob = () => {
     { value: "Redux", label: "Redux" },
     { value: "CSS", label: "CSS" },
   ];
+
   return (
     <div className="max-w-screen-2x1 container mx-auto xl:px-24 px-4">
       {/* form */}
@@ -51,8 +69,8 @@ const CreateJob = () => {
               <label className="block mb-2 text-lg">Judul Pekerjaan</label>
               <input
                 type="text"
-                placeholder="Ex: Web Developper"
-                {...register("jobTitle")}
+                defaultValue={jobTitle}
+                {...register("jobTittle")}
                 className="create-job-input"
               />
             </div>
@@ -61,6 +79,7 @@ const CreateJob = () => {
               <input
                 type="text"
                 placeholder="Ex: Microsoft"
+                defaultValue={companyName}
                 {...register("companyName")}
                 className="create-job-input"
               />
@@ -74,6 +93,7 @@ const CreateJob = () => {
               <input
                 type="text"
                 placeholder="Rp 5.000.000,00"
+                defaultValue={minPrice}
                 {...register("minPrice")}
                 className="create-job-input"
               />
@@ -83,6 +103,7 @@ const CreateJob = () => {
               <input
                 type="text"
                 placeholder="Rp 7.500.000,00"
+                defaultValue={maxPrice}
                 {...register("maxPrice")}
                 className="create-job-input"
               />
@@ -94,7 +115,7 @@ const CreateJob = () => {
             <div className="lg:w-1/2 w-full">
               <label className="block mb-2 text-lg">Jenis Gaji</label>
               <select {...register("salaryType")} className="create-job-input">
-                <option value="Mr">Pilih Jenis Gaji</option>
+                <option value={salaryType}>{salaryType}</option>
                 <option value="Hourly">Per Jam</option>
                 <option value="Monthly">Bulanan</option>
                 <option value="Yearly">Tahunan</option>
@@ -105,6 +126,7 @@ const CreateJob = () => {
               <input
                 type="text"
                 placeholder="Ex: Jakarta Selatan"
+                defaultValue={jobLocation}
                 {...register("jobLocation")}
                 className="create-job-input"
               />
@@ -120,6 +142,7 @@ const CreateJob = () => {
               <input
                 type="Date"
                 placeholder="Ex: 2024-06-12"
+                defaultValue={postingDate}
                 {...register("postingDate")}
                 className="create-job-input"
               />
@@ -130,7 +153,7 @@ const CreateJob = () => {
                 {...register("experienceLevel")}
                 className="create-job-input"
               >
-                <option value="">Pilih Sistem Kerja</option>
+                <option value={experienceLevel}>{experienceLevel}</option>
                 <option value="Work Remotely">WFO</option>
                 <option value="Work Remotely">Hybrid</option>
                 <option value="Work Remotely">WFH</option>
@@ -144,7 +167,7 @@ const CreateJob = () => {
               Keterampilan Yang Diperlukan
             </label>
             <CreatableSelect
-              defaultValue={selectedOption}
+              defaultValue={skills}
               onChange={setSelectedOption}
               options={option}
               isMulti
@@ -159,6 +182,7 @@ const CreateJob = () => {
               <input
                 type="url"
                 placeholder="Paste your company logi ULR:https//wetshare.com/img"
+                defaultValue={companyLogo}
                 {...register("companyLogo")}
                 className="create-job-input"
               />
@@ -169,7 +193,7 @@ const CreateJob = () => {
                 {...register("employmentType")}
                 className="create-job-input"
               >
-                <option value="">Pilih Tipe Pekerjaan</option>
+                <option value={employmentType}>{employmentType}</option>
                 <option value="Full-time">Full-time</option>
                 <option value="Part-time">Part-time</option>
                 <option value="Temporary">Magang</option>
@@ -183,7 +207,7 @@ const CreateJob = () => {
             <textarea
               className="w-full pl-3 py-1.5 focus:outline-none placeholder:text-gray-700"
               rows={6}
-              defaultValue={""}
+              defaultValue={description}
               placeholder="Ex: Bertanggung jawab untuk menciptakan antarmuka pengguna (User Interface, UI) yang efektif dan pengalaman pengguna (User Experience, UX) yang memuaskan dalam suatu produk digital, seperti aplikasi atau situs web."
               {...register("description")}
             />
@@ -195,6 +219,7 @@ const CreateJob = () => {
             <input
               type="email"
               placeholder="Masukkan E-mail Perusahaan"
+              defaultValue={postedBy}
               {...register("postedBy")}
               className="create-job-input"
             />
@@ -210,4 +235,4 @@ const CreateJob = () => {
   );
 };
 
-export default CreateJob;
+export default UpdateJob;
