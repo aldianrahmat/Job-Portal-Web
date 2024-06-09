@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../Pages/Home";
-import About from "../Pages/About";
 import CreateJob from "../Pages/CreateJob";
 import MyJobs from "../Pages/MyJobs";
 import SalaryPage from "../Pages/SalaryPage";
 import UpdateJob from "../Pages/UpdateJob.jsx";
-import JobDetails from "../Pages/JobDetails"; // Ensure this import is added
+import JobDetails from "../Pages/JobDetails";
+import FormLogin from "../Pages/Formlogin.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/jobs/:id",
         element: <JobDetails />,
+      },
+      {
+        path: "/login",
+        element: <FormLogin />,
       },
     ],
   },

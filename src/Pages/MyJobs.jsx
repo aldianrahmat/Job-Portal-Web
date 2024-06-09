@@ -45,10 +45,10 @@ const MyJobs = () => {
   };
 
   const handleSearch = () => {
-    const query = searchText.toLowerCase();
+    const query = searchText ? searchText.toLowerCase() : "";
     console.log(jobs);
     const filtered = jobs.filter((job) => {
-      const matchesTitle = job.jobTittle.toLowerCase().includes(query);
+      const matchesTitle = job.jobTitle.toLowerCase().includes(query);
       const matchesLocation = job.jobLocation.toLowerCase().includes(query);
       return matchesTitle || matchesLocation;
     });
@@ -56,11 +56,9 @@ const MyJobs = () => {
     return filtered;
   };
 
-  const filteredJobs = handleSearch();
-
   // Function to delete a job
   const deleteJob = (id) => {
-    fetch(`http://localhost:5000/job/${id}`, {
+    fetch(`http://localhost:5000/jobs/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -192,15 +190,6 @@ const MyJobs = () => {
                             </button>
                             {dropdownVisible === job._id && (
                               <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-sm shadow-lg">
-                                <button
-                                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                  onClick={() => {
-                                    window.location.href = `/edit-job/${job._id}`;
-                                    setDropdownVisible(null);
-                                  }}
-                                >
-                                  Ubah
-                                </button>
                                 <button
                                   className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                   onClick={() => {
