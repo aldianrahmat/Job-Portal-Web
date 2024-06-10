@@ -73,7 +73,7 @@ const Home = () => {
       />
 
       {/* Konten utama */}
-      <div className="bg-[#FAFAFA] grid grid-cols-12 gap-4 px-4 py-4">
+      <div className="bg-[#FAFAFA] grid grid-cols-12 gap-4 px-32 py-4">
         {/* Sisi kiri */}
         <div className="bg-white p-4 rounded col-span-2">
           <Sidebar handleChange={handleChange} />
