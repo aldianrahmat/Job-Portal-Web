@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Jobs from "./Jobs";
-import FilterItem from "../components/FilterItem";
+import Sidebar from "../components/Sidebar";
 import Newsletter from "../components/Newsletter";
 
 const Home = () => {
@@ -9,10 +9,12 @@ const Home = () => {
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState("");
+  const [salary, setSalary] = useState(0);
+  const [employment, setEmployment] = useState("");
 
   // Mengambil data pekerjaan saat komponen dipasang
   useEffect(() => {
-    fetch("jobs.json")
+    fetch("http://localhost:5000/jobs")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -23,6 +25,17 @@ const Home = () => {
         // Tangani kesalahan dengan baik, misalnya tampilkan pesan error kepada pengguna
       });
   }, []);
+
+  // ----------- Radio Filtering -----------
+  const handleChange = (event) => {
+    if (event.target.name === "location") {
+      setLocation(event.target.value.toLowerCase());
+    } else if (event.target.name === "salary") {
+      setSalary(Number(event.target.value));
+    } else if (event.target.name === "employment") {
+      setEmployment(event.target.value.toLowerCase());
+    }
+  };
 
   // Menangani perubahan input judul pekerjaan
   const handleInputChange = (event) => {
@@ -39,10 +52,16 @@ const Home = () => {
     const filtered = jobs.filter((job) => {
       const matchesTitle = job.jobTitle.toLowerCase().includes(query);
       const matchesLocation = job.jobLocation.toLowerCase().includes(location);
-      return matchesTitle && matchesLocation;
+      const matchesSalary = Number(job.maxPrice) >= salary;
+      const matchesEmployment = job.employmentType
+        .toLowerCase()
+        .includes(employment);
+      return (
+        matchesTitle && matchesLocation && matchesSalary && matchesEmployment
+      );
     });
     setFilteredJobs(filtered);
-  }, [jobs, query, location]);
+  }, [jobs, query, location, salary, employment]);
 
   return (
     <div>
@@ -54,10 +73,10 @@ const Home = () => {
       />
 
       {/* Konten utama */}
-      <div className="bg-[#FAFAFA] grid grid-cols-12 gap-4 px-4 py-4">
+      <div className="bg-[#FAFAFA] grid grid-cols-12 gap-4 px-32 py-4">
         {/* Sisi kiri */}
         <div className="bg-white p-4 rounded col-span-2">
-          <FilterItem />
+          <Sidebar handleChange={handleChange} />
         </div>
 
         {/* Kartu pekerjaan */}
