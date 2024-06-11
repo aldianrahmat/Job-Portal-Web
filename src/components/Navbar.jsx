@@ -126,7 +126,7 @@ const Navbar = () => {
               Masuk
             </Link>
             <Link
-              to="/sign-up"
+              to="/register"
               className="py-2 px-5 border rounded bg-blue text-white"
             >
               Daftar
