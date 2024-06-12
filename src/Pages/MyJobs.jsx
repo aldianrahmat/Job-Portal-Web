@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 
-const MyJobs = () => {
+const MyJobs = ({ email }) => {
+  console.log("hello");
+  console.log(email);
   const [jobs, setJobs] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +18,7 @@ const MyJobs = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/myJobs/HexaVibes@gmail.com")
+    fetch(`http://localhost:5000/myJobs/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

@@ -7,6 +7,9 @@ import SalaryPage from "../Pages/SalaryPage";
 import UpdateJob from "../Pages/UpdateJob.jsx";
 import JobDetails from "../Pages/JobDetails";
 import FormLogin from "../Pages/Formlogin.jsx";
+import PrivateRouter from "./PrivateRouter.jsx";
+import Login from "../Pages/Login.jsx";
+import Signup from "../Pages/SignUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-job",
-        element: <MyJobs />,
+        element: <PrivateRouter />,
       },
       {
         path: "/edit-job/:id",
@@ -38,7 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <FormLogin />,
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Signup />,
       },
     ],
   },
