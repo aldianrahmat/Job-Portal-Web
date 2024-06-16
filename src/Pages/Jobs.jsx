@@ -1,22 +1,40 @@
-import React from 'react';
-import { FaMapMarkerAlt, FaRegMoneyBillAlt, FaCalendarAlt, FaUserTie } from "react-icons/fa";
+import React from "react";
+import {
+  FaMapMarkerAlt,
+  FaRegMoneyBillAlt,
+  FaCalendarAlt,
+  FaUserTie,
+} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Jobs = ({ result }) => {
+  const navigation = useNavigate();
+
+  const onClick = (id) => {
+    navigation(`/jobs/${id}`);
+  };
+
   return (
-    <div className='flex flex-row flex-wrap'>
+    <div className="flex flex-row flex-wrap">
       {result.map((job) => (
-        <div key={job.id} className="flex w-full m-3 shadow shadow-blue-500/40 hover:shadow-indigo-500/40 rounded-xl">
+        <div
+          key={job.id}
+          onClick={() => onClick(job.id)}
+          className="flex w-full m-3 shadow shadow-blue-500/40 hover:shadow-indigo-500/40 rounded-xl"
+        >
           <div className="image-content mx-5 py-5">
-            <img 
-              src={job.companyLogo} 
-              className={`w-${job.companyName === 'Notion' ? '20' : '24'} h-${job.companyName === 'Notion' ? '20' : '24'} object-contain`} 
-              alt={`${job.companyName} logo`} 
-            /> 
+            <img
+              src={job.companyLogo}
+              className={`w-${job.companyName === "Notion" ? "20" : "24"} h-${
+                job.companyName === "Notion" ? "20" : "24"
+              } object-contain`}
+              alt={`${job.companyName} logo`}
+            />
           </div>
           <div className="desc flex flex-col justify-between gap-3 py-5">
             <div>
-              <h3 className='font-medium'>{job.companyName}</h3>
-              <h2 className='font-bold text-2xl'>{job.jobTitle}</h2>
+              <h3 className="font-medium">{job.companyName}</h3>
+              <h2 className="font-bold text-2xl">{job.jobTitle}</h2>
               <div className="information-bar flex gap-5 items-center">
                 <FaMapMarkerAlt className="text-gray-500" />
                 <p>{job.jobLocation}</p>
@@ -24,7 +42,7 @@ const Jobs = ({ result }) => {
                 <p>{job.employmentType}</p>
                 <FaRegMoneyBillAlt className="text-gray-500 ml-auto" />
                 <p>
-                  {job.salaryType === 'annual'
+                  {job.salaryType === "annual"
                     ? `Rp.${job.minPrice}jt - Rp.${job.maxPrice}jt/Bln`
                     : `Rp.${job.minPrice}jt - Rp.${job.maxPrice}jt/Bln`}
                 </p>

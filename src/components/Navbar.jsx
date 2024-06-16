@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
+import { auth } from "../../firebase-config";
+import { signOut, onAuthStateChanged } from "firebase/auth";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const handleMenuToggler = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -14,6 +17,30 @@ const Navbar = () => {
     { path: "/salary", title: "Jelajahi Gaji" },
     { path: "/post-job", title: "Pasang Lowongan Kerja" },
   ];
+
+  const navigation = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        navigation("/");
+        console.log("Signed out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    });
+  }, []);
 
   return (
     <header className="max-w-screen-2xl container mx-auto xl:px-24 px-4">
@@ -80,15 +107,12 @@ const Navbar = () => {
           <span>Talenta Nusantara.</span>
         </a>
 
-        {/* Nav items for large devices */}
-        <ul className="hidden md:flex gap-12">
+        <ul className="flex gap-12">
           {navItems.map(({ path, title }) => (
             <li key={path} className="text-base text-primary">
               <NavLink
                 to={path}
-                className={({ isActive }) =>
-                  isActive ? "active" : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 {title}
               </NavLink>
@@ -96,21 +120,27 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Sign and login buttons */}
-        <div className="text-base text-primary font-medium space-x-5 hidden lg:block">
-          <Link to="/login" className="py-2 px-5 border rounded">
-            Masuk
-          </Link>
-          <Link
-            to="/sign-up"
-            className="py-2 px-5 border rounded bg-blue text-white"
-          >
-            Daftar
-          </Link>
-        </div>
+        {!loggedIn ? (
+          <div className="flex gap-5 text-base text-primary font-medium">
+            <Link to="/login" className="py-2 px-5 border rounded">
+              Masuk
+            </Link>
+            <Link
+              to="/register"
+              className="py-2 px-5 border rounded bg-blue text-white"
+            >
+              Daftar
+            </Link>
+          </div>
+        ) : (
+          <div className="flex gap-5 text-base text-primary font-medium">
+            <button onClick={handleLogout} className="py-2 px-5 border rounded">
+              Sign out
+            </button>
+          </div>
+        )}
 
-        {/* Mobile menu */}
-        <div className="md:hidden block ">
+        <div className="md:hidden block">
           <button onClick={handleMenuToggler}>
             {isMenuOpen ? (
               <FaXmark className="w-5 h-5 text-primary" />
@@ -121,11 +151,14 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Nav items for mobile */}
-      <div className={`px-4 bg-black py-5 rounded-sm ${isMenuOpen ? "" : "hidden"}`}>
-        <ul>
+      <div
+        className={`px-4 py-5 bg-black rounded-sm ${
+          isMenuOpen ? "" : "hidden"
+        }`}
+      >
+        <ul className="flex flex-col gap-4">
           {navItems.map(({ path, title }) => (
-            <li key={path} className="text-base text-white first:text-white py-1">
+            <li key={path} className="text-base text-white">
               <NavLink
                 to={path}
                 className={({ isActive }) => (isActive ? "active" : "")}
@@ -135,10 +168,11 @@ const Navbar = () => {
             </li>
           ))}
 
-          <li className="text-white py-1">
-            <Link to="/login" className="">
-              Masuk
-            </Link>
+          <li className="text-white">
+            <Link to="/login">Masuk</Link>
+          </li>
+          <li className="text-white">
+            <Link to="/sign-up">Daftar</Link>
           </li>
         </ul>
       </div>
@@ -147,4 +181,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
